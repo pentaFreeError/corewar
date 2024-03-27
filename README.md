@@ -31,7 +31,14 @@ Pour lancer le projet Corewar, exécutez le fichier `corewar.sh`. Ce script se c
 Pour donner un aperçu du projet et de son interface, voici quelques captures d'écran et images illustratives :
 
 ![](images/welcomePage.png)
+
+
+![](images/inGame.png)
+
+
 ![](images/editPage.png)
+
+
 ![](images/filePage.png)
 
 
