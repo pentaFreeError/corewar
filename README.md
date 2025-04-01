@@ -1,52 +1,100 @@
-# Projet Corewar
+# Corewar Project
 
 ## Introduction
 
-Dans le cadre de ma deuxième année de licence en informatique, j'ai développé un projet axé sur l'optimisation de programmes en Redcode. Ce projet comprend un parseur, un interpréteur écrit en Java, et une implémentation de l'algorithme de recuit simulé pour l'optimisation de code. Corewar est un jeu de programmation dans lequel les programmes (écrits en Redcode) s'affrontent dans une arène virtuelle, avec pour but ultime de rester le dernier en fonctionnement.
+As part of my second year of a Bachelor's degree in Computer Science, I developed a project focused on optimizing programs written in Redcode. This project includes a parser, an interpreter written in Java, and an implementation of the simulated annealing algorithm for code optimization. Corewar is a programming game in which programs (written in Redcode) battle in a virtual arena, with the ultimate goal of being the last one running.
 
-## Qu'est-ce que Corewar ?
+## What is Corewar?
 
-Corewar est un jeu de programmation où des programmes appelés "warriors" s'affrontent dans une arène virtuelle. Chaque guerrier tente de corrompre ou de détruire ses adversaires pour être le dernier en cours d'exécution. Ce jeu met en évidence des compétences en programmation, en stratégie et en optimisation.
+Corewar is a programming game where programs called "warriors" compete in a virtual arena. Each warrior attempts to corrupt or destroy its opponents in order to be the last one still executing. The game emphasizes skills in programming, strategy, and optimization.
 
-## Qu'est-ce que le Redcode ?
+## What is Redcode?
 
-Redcode est le langage de programmation utilisé dans Corewar. Il est conçu pour être simple mais puissant, permettant aux utilisateurs de créer des programmes (warriors) qui s'affrontent dans l'arène de Corewar. Redcode offre une syntaxe de base pour la manipulation de la mémoire, l'exécution de commandes conditionnelles et la réalisation d'opérations mathématiques.
+Redcode is the programming language used in Corewar. It is designed to be simple yet powerful, allowing users to create programs (warriors) that compete in the Corewar arena. Redcode provides basic syntax for memory manipulation, conditional execution, and mathematical operations.
 
-## Optimisation avec l'algorithme de recuit simulé
+## Optimization with Simulated Annealing
 
-L'optimisation dans ce projet se réfère à l'amélioration des programmes Redcode pour les rendre plus efficaces en combat. Nous avons utilisé l'algorithme de recuit simulé, une technique d'optimisation qui imite le processus de refroidissement du métal, pour trouver une configuration optimale des instructions Redcode qui maximise les performances des warriors dans l'arène.
+Optimization in this project refers to enhancing Redcode programs to make them more effective in battle. We used the simulated annealing algorithm—a technique that mimics the cooling process of metal—to find an optimal configuration of Redcode instructions that maximizes warrior performance in the arena.
 
-## Mise en route
+## Features
 
-Pour lancer le projet Corewar, exécutez le fichier `corewar.sh`. Ce script se charge de compiler et d'exécuter le main, vous permettant d'interagir avec le programme.
-
-### Fonctionnalités
-
-- **Création et modification de warriors :** Le projet permet de créer et de modifier des programmes en Redcode, offrant aux utilisateurs la possibilité de personnaliser leurs stratégies de combat.
-- **Simulation de combat :** Les utilisateurs peuvent simuler des combats entre deux warriors pour tester et affiner leurs créations.
-- **Génération de code optimisé :** Grâce à l'algorithme de recuit simulé, le projet est capable de générer des programmes Redcode optimisés, augmentant ainsi les chances de succès dans l'arène.
+- **Creation and modification of warriors:** The project allows users to create and modify Redcode programs, giving them the ability to customize combat strategies.
+- **Combat simulation:** Users can simulate battles between two warriors to test and refine their creations.
+- **Optimized code generation:** Using the simulated annealing algorithm, the project can generate optimized Redcode programs, increasing the chances of success in the arena.
 
 ## Visuals
 
-Pour donner un aperçu du projet et de son interface, voici quelques captures d'écran et images illustratives :
+Here are some screenshots of the project and its graphical interface:
 
-![](images/welcomePage.png)
-
-
-![](images/inGame.png)
-
-
-![](images/editPage.png)
+![Welcome Page](images/welcomePage.png)
+![In-Game View](images/inGame.png)
+![Editor Page](images/editPage.png)
+![File Page](images/filePage.png)
 
 
-![](images/filePage.png)
+## Getting Started
+
+### Prerequisites
+
+#### If running **without Docker**:
+Make sure the following are installed on your system:
+
+- **Java JDK 17 or higher**  
+- **Git**
+- **X11 Display Server** (for Linux users only — needed to launch the GUI)
+
+#### If running **with Docker**:
+Make sure you have:
+
+- **[Docker](https://docs.docker.com/get-docker/)**
+- **X11 Display Server** (Linux only — GUI support)
+- **Git**
+
+---
 
 
 
-## Conclusion
 
-Ce projet représente une application pratique de concepts avancés en programmation et en optimisation, dans le cadre ludique et compétitif de Corewar. Il démontre l'efficacité de l'algorithme de recuit simulé pour l'optimisation de code dans un environnement contraint et hautement compétitif.
 
-## Licence
 
-Ce projet est mis à disposition sous la Licence MIT. Pour plus d'informations, veuillez consulter le fichier LICENSE inclus.
+### ▶️ Run Without Docker
+
+To run the Corewar project directly on your system (no container), use the following commands:
+
+```bash
+git clone git@github.com:pentaFreeError/corewar.git
+cd corewar/source
+chmod +x corewar.sh
+./corewar.sh
+```
+
+This will compile and launch the application with its graphical interface.
+
+---
+
+## 🐳 Running with Docker (Recommended)
+
+### Step 1: Clone the Repository
+
+```bash
+git clone git@github.com:pentaFreeError/corewar.git
+cd corewar
+```
+
+### Step 2: Build the Docker Image
+```bash
+xhost +local:docker
+docker build -t corewar .
+```
+
+### Step 3: Run the Application
+```bash
+docker run -it --rm \
+  -e DISPLAY=$DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  corewar
+```
+
+## License
+
+This project is licensed under the MIT License. For more information, please refer to the [LICENSE](./LICENSE) file.
